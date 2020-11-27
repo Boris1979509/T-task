@@ -1,0 +1,182 @@
+html {
+    height: 100%;
+}
+body {
+    font-family: $mainFont;
+    font-weight: $mainFontWeight;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    color: $mainFontColor;
+    font-size: $mainFontSize;
+    background-color: $bodyBg;
+}
+/* h1, h2, h3 */
+h1 {
+    font-size: 3rem;
+    line-height: 1.5;
+}
+h2 {
+    font-size: 1.5rem;
+    line-height: 1.22;
+}
+h3 {
+    font-size: 1.75rem;
+}
+.container {
+    max-width: $desktopWidth;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+.wrapper {
+    position: relative;
+}
+#main-content {
+    /* 1 flex-grow, 0 flex-shrink, auto flex-basis */
+    flex: 1 0 auto;
+}
+.button {
+    cursor: pointer;
+    padding: 20px;
+    text-align: center;
+    background-color: $buttonBg;
+    font-weight: bold;
+    font-size: 1rem;
+    line-height: 1.2;
+    color: $default-color;
+    border-radius: 0 0 10px 10px;
+    transition: all 0.2s ease;
+    &.btn-outline {
+        border: 1px solid $buttonBorderOutline;
+        border-radius: 10px;
+        font-size: 0.875rem;
+        line-height: 1.2;
+        color: initial;
+        background: none;
+        font-weight: normal;
+        &:hover {
+            background-color: $buttonBg;
+            color: $default-color;
+        }
+    }
+    @media (max-width: $smTableWidth) {
+        width: 100% !important;
+    }
+}
+.btn-show-more {
+    margin-top: 68px;
+    display: flex;
+    justify-content: center;
+    .button {
+        width: 380px;
+        @media (max-width: $smTableWidth) {
+            width: 100% !important;
+        }
+    }
+}
+
+img {
+    width: 100%;
+}
+
+/* Inputs */
+.input-group {
+    margin-bottom: 24px;
+    &__input {
+        background: $default-color;
+        border-radius: 10px;
+        padding: 20px;
+        // mixin
+        @include input-placeholder {
+            color: $mainFontColor;
+            font-family: $mainFont;
+            font-weight: $mainFontWeight;
+        }
+        @media (max-width: $smTableWidth) {
+            width: 100% !important;
+        }
+    }
+    input[type="checkbox"] {
+        display: none;
+    }
+    label {
+        cursor: default;
+        line-height: 18px;
+        vertical-align: bottom;
+        position: relative;
+        &:before {
+            content: "";
+            display: inline-block;
+            width: 18px;
+            height: 18px;
+            background: $default-color;
+            border-radius: 3px;
+            margin-right: 22px;
+            vertical-align: inherit;
+        }
+    }
+
+    input:checked + label:before {
+        content: "";
+        background: url("/assets/images/checkbox-check-icon.png") $buttonBg 50% 50% no-repeat;
+        background-size: 10px 8px;
+    }
+}
+/* Select*/
+select {
+    appearance: none;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    background: url("/assets/images/select-arrow-icon.png") 100% center no-repeat;
+    background-size: 15px 9px;
+    z-index: 1;
+    &::-ms-expand {
+        display: none;
+    }
+    outline: none;
+}
+/* button scroll top */
+.wrapper-content {
+    position: relative;
+    max-width: $desktopWidth;
+    margin: 0 auto;
+    & > .scroll-wrap {
+        position: absolute;
+        right: 15px;
+        top: 0;
+        bottom: 0;
+        & > #scrollTop {
+            opacity: 0;
+            visibility: hidden;
+            position: fixed;
+            width: 59px !important;
+            height: 59px;
+            border-radius: 0 !important;
+            z-index: 3;
+            transform: translateX(-100%);
+            &:after {
+                content: "";
+                display: inline-block;
+                background: url("/assets/images/scroll-top-icon.png") 50% 50% no-repeat;
+                width: 18px;
+                height: 18px;
+            }
+            &.is-visible {
+                opacity: 1;
+                visibility: visible;
+            }
+            @media (max-width: $tableWidth) {
+                display: none;
+            }
+        }
+    }
+    @media (max-width: $tableWidth) {
+        margin-top: 90px;
+    }
+}

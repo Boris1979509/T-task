@@ -1,0 +1,29 @@
+.tooltip-icon {
+    &[data-title] {
+        &:hover::before {
+            content: attr(data-title);
+            position: absolute;
+            top: -42px;
+            display: inline-block;
+            padding: 10px;
+            border-radius: $defaultBorderRadius;
+            background: $tooltipBg;
+            color: $default-color;
+            white-space: nowrap;
+            z-index: 2;
+            right: -32px;
+        }
+
+        &:hover:after {
+            content: "";
+            position: absolute;
+            top: -4px;
+            left: 24px;
+            display: inline-block;
+            color: $default-color;
+            border: $defaultBorderRadius solid transparent;
+            border-top: $defaultBorderRadius solid $tooltipBg;
+            z-index: 2;
+        }
+    }
+}

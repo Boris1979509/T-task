@@ -1,0 +1,13 @@
+nav.main-nav(aria-label='Main')
+    .main-nav__logo
+        a(href='/').main-nav__logo-link
+            img(src='/assets/images/logo.svg', alt="logo", title='T-task')
+    button.main-nav__hamburger(aria-label='menu', aria-controls='navigation')
+        span.main-nav__hamburger-top
+        span.main-nav__hamburger-middle
+        span.main-nav__hamburger-bottom
+    include ../../utils/mixins
+    +pages('Main', 'Gallery', 'News', 'Profile')
+    div.main-nav__phone +544 3490 00000
+        div.main-nav__call Звони скорее!
+div.text-search-results Найдено 349 котов

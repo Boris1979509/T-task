@@ -1,0 +1,57 @@
+// Pages
+mixin pages(...pages)
+    ul.main-nav__list
+        each page in pages
+            li(class=(page === 'Main' ? 'main-nav__item--selected' : 'main-nav__item'))
+                a.main-nav__link(href=`#${page}`, title= page)= page
+// Goods
+mixin goods(goods)
+    each item, i in goods
+        article.card
+            aside.card__aside
+                if item.sale
+                    div.sale= item.sale
+                span(class=`tooltip-icon${item.favorite ? ' active' : ''}`)
+                    svg(class='favorite')
+                        path(d="M33.7812 0.695312C31.2851 0.695312 28.9966 1.4863 26.9794 3.04634C25.0456 4.54197 23.758 6.44693 23 7.83214C22.242 6.44684 20.9544 4.54197 19.0206 3.04634C17.0034 1.4863 14.7149 0.695312 12.2188 0.695312C5.25298 0.695312 0 6.39293 0 13.9485C0 22.1112 6.55347 27.696 16.4746 36.1505C18.1593 37.5863 20.0689 39.2138 22.0538 40.9494C22.3154 41.1785 22.6514 41.3047 23 41.3047C23.3486 41.3047 23.6846 41.1785 23.9462 40.9495C25.9312 39.2136 27.8408 37.5862 29.5265 36.1496C39.4465 27.696 46 22.1112 46 13.9485C46 6.39293 40.747 0.695312 33.7812 0.695312Z",  fill="white" fill-opacity="0.5")
+                figure.card__figure
+                    img.card__image(src=`/assets/images/${item.img}`, alt= item.img)
+            div.card__content
+                header.card__header
+                    h2.card__title= item.title
+                div.card__body
+                    div.card__params
+                        div.card__params-item= item.color
+                        div.card__params-item
+                            div.age= item.age
+                            | Возраст
+                        div.card__params-item
+                            div.paws= item.paws
+                            | Кол-во лап
+                    div.card__price
+                        p
+                            strong.number-format= item.price
+            footer.card__footer
+                .card__actions
+                    if item.status
+                        button.button
+                            | Купить
+                    else
+                        button.button.sold
+                            | Продано
+// Filters
+mixin filters(goods)
+    - const prices = [...new Set(goods.map(item => item.price))];
+    - const allAge = [...new Set(goods.map(item => item.age))];
+    div.filters
+        div.filters__title Сортировать по:
+        .filters__item
+            select.filters__select-by-price
+                option(selected='selected', value='') Цене
+                    each price in prices
+                        option(class='number-format', value= price)= price
+        .filters__item
+            select.filters__select-by-age
+                option(selected='selected', value='') Возрасту
+                    each age in allAge
+                        option(value= age)= age

@@ -1,0 +1,31 @@
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    column-gap: 2rem;
+    margin: 35px 0;
+    @media (max-width: $smTableWidth) {
+        margin: 20px 0;
+    }
+
+    &__title {
+        font-weight: 700;
+        font-size: 1.125rem;
+        line-height: 1.25;
+        @media (max-width: $smTableWidth) {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+    }
+
+    &__select-by-price,
+    &__select-by-age {
+        min-width: 15ch;
+        max-width: 30ch;
+        font-size: 1.125rem;
+        line-height: 1.25;
+        padding: 0 10px;
+    }
+}

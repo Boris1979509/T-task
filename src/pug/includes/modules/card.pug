@@ -1,0 +1,77 @@
+include ../../utils/mixins
+-
+    const goods = [
+                    {
+                        title: "Кот полосатый",
+                        img: "image1.jpg",
+                        sale: "-40%",
+                        color: "Коричневый окрас",
+                        age: "2 месяца",
+                        paws: 4,
+                        price: 30000,
+                        favorite: false,
+                        status: true
+                    },
+                    {
+                        title: "Кот полосатый",
+                        img: "image2.jpg",
+                        sale: false,
+                        color: "Коричневый окрас",
+                        age: "2 месяца",
+                        paws: 4,
+                        price: 40000,
+                        favorite: true,
+                        status: false
+                    },
+                    {
+                        title: "Кот полосатый",
+                        img: "image3.jpg",
+                        sale: false,
+                        color: "Коричневый окрас",
+                        age: "3 месяца",
+                        paws: 4,
+                        price: 30000,
+                        favorite: true,
+                        status: true
+                    },
+                    {
+                        title: "Кот полосатый",
+                        img: "image4.jpg",
+                        sale: "-25%",
+                        color: "Коричневый окрас",
+                        age: "1 год",
+                        paws: 4,
+                        price: 50000,
+                        favorite: false,
+                        status: true
+                    },
+                    {
+                        title: "Кот полосатый",
+                        img: "image5.jpg",
+                        sale: false,
+                        color: "Коричневый окрас",
+                        age: "5 лет",
+                        paws: 4,
+                        price: 150000,
+                        favorite: false,
+                        status: true
+                    },
+                    {
+                        title: "Кот полосатый",
+                        img: "image6.jpg",
+                        sale: false,
+                        color: "Коричневый окрас",
+                        age: "3 месяца",
+                        paws: 4,
+                        price: 150000,
+                        favorite: false,
+                        status: false
+                    }
+                ]        
+.container
+    +filters(goods)
+.container
+    .card-container
+        +goods(goods)
+
+

@@ -1,0 +1,85 @@
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax($cardWidth, 1fr));
+    //display: flex;
+    //flex-wrap: wrap;
+    //justify-content: center;
+    gap: 20px;
+
+    .card {
+        //max-width: $cardWidth;
+        position: relative;
+        &__title {
+            font-weight: 700;
+            margin-bottom: 24px;
+        }
+        &__price {
+            margin-top: 22px;
+            font-size: 1.5rem;
+            line-height: 1.2;
+        }
+        &__content {
+            padding: 30px;
+            background-color: $cardContent;
+            min-height: 220px;
+        }
+        &__params {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
+            border-left: 4px solid #6ebbd3;
+            padding-left: 18px;
+            &-item {
+                font-size: 0.75rem;
+                line-height: 1.3;
+                .age,
+                .paws {
+                    font-weight: bold;
+                    font-size: 1rem;
+                    line-height: 1.3;
+                }
+            }
+        }
+        &__actions {
+            .button {
+                width: 100%;
+                &.sold {
+                    background-color: $buttonBgSold;
+                    cursor: default;
+                }
+            }
+        }
+        .sale {
+            position: absolute;
+            left: 38px;
+            top: 34px;
+            background: #e62d2d;
+            border-radius: 10px;
+            padding: 9px 18px;
+            font-size: 1rem;
+            color: $default-color;
+        }
+        .tooltip-icon {
+            width: 46px;
+            height: 42px;
+            position: absolute;
+            right: 32px;
+            top: 34px;
+            cursor: pointer;
+            .favorite {
+                width: inherit;
+                height: inherit;
+                path {
+                    transition: fill-opacity 0.4s ease;
+                }
+            }
+            &:hover,
+            &.active {
+                path {
+                    fill-opacity: 1;
+                }
+            }
+        }
+    }
+}

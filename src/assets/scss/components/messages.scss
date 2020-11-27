@@ -1,0 +1,19 @@
+%message {
+    padding: 10px;
+    color: $default-color;
+    border-radius: $defaultBorderRadius;
+}
+.messages {
+    position: fixed;
+    right: 50px;
+    z-index: 4;
+    bottom: 50px;
+    .error {
+        background-color: $danger-color;
+        @extend %message
+    }
+    .success {
+        background-color: $success-color;
+        @extend %message
+    }
+}

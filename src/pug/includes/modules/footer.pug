@@ -1,0 +1,18 @@
+footer#main-footer
+    .container
+        .footer-content
+            div.main-text
+                h1 Успей купить!
+                h3 Подпишись и успей
+                    br 
+                    | словить все акции
+            div.subscr
+                form(class='form', action='/', method='post')
+                    div.input-group
+                        input#email.input-group__input(type='text', placeholder='Email', name='email')
+                        button(class='button', type='submit') Подписаться
+                    div.input-group
+                        input#subscrCheckbox.checkbox__input(type='checkbox', name='check_news', checked='checked')
+                        label.checkbox(for='subscrCheckbox')
+                            | Подписаться на новости
+

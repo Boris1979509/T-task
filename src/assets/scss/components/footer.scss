@@ -1,0 +1,67 @@
+#main-footer {
+    margin-bottom: 5%;
+    /* 0 flex-grow, 0 flex-shrink, auto flex-basis */
+    // flex: 0 0 auto;
+    margin-top: 83px;
+    .footer-content {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        flex-wrap: wrap;
+        column-gap: 20px;
+        row-gap: 20px;
+        padding: 80px 92px;
+        background-color: $footerBg;
+        @media (max-width: $smDesktopWidth) {
+            padding: 0;
+        }
+    }
+    h1 {
+        font-weight: 700;
+        color: $default-color;
+        margin-bottom: 26px;
+        @media (max-width: $desktopWidth) {
+            font-size: 2.5rem;
+            line-height: 1.1;
+            margin-bottom: 10px;
+        }
+    }
+    h3 {
+        line-height: 0.9;
+        color: $default-color;
+        @media (max-width: $desktopWidth) {
+            font-size: 1.5rem;
+        }
+    }
+    .checkbox {
+        font-size: 0.875rem;
+        line-height: 1.2;
+        color: $default-color;
+    }
+    .button {
+        width: 250px;
+        border-radius: 10px;
+    }
+    .input-group {
+        &__input {
+            width: 300px;
+            margin-right: 16px;
+            @media (max-width: $smTableWidth) {
+                margin: 0 0 10px 0;
+            }
+        }
+    }
+
+    @media (max-width: $smDesktopWidth) {
+        margin-bottom: 0;
+        background-color: $footerBg;
+        padding: 40px 0 30px 0;
+    }
+    @media (max-width: $smTableWidth) {
+        padding: 40px 0 0 0;
+        .subscr {
+            width: 100%;
+        }
+    }
+}
