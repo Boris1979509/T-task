@@ -10,10 +10,14 @@
     bottom: 50px;
     .error {
         background-color: $danger-color;
-        @extend %message
+        @extend %message;
     }
     .success {
         background-color: $success-color;
-        @extend %message
+        @extend %message;
+    }
+    @media (max-width: $tableWidth) {
+        right: 15px;
+        bottom: 15px;
     }
 }
